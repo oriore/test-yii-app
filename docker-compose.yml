@@ -13,6 +13,7 @@ services :
       - db:db
     env_file:
       ./docker-dev/php/.env_dev
+    entrypoint: sh -c '/var/www/docker-php-entrypoint.sh'
     tty: true
     stdin_open: true
 
