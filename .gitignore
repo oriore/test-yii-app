@@ -2,3 +2,4 @@ service/vendor
 service/project/protected/vendor
 service/project/protected/runtime
 service/project/assets
+service/project/npm/node_modules

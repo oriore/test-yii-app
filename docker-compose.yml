@@ -13,11 +13,15 @@ services :
       - db:db
     env_file:
       ./docker-dev/php/.env_dev
+    entrypoint: sh -c '/var/www/docker-php-entrypoint.sh'
     tty: true
     stdin_open: true
 
   db:
     image: mysql:5.7
+    platform: linux/amd64
+    environment:
+      LANG: C.UTF-8
     volumes:
       - ./docker-dev/mysql/conf.d:/etc/mysql/conf.d
     env_file:

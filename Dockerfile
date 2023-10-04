@@ -13,5 +13,8 @@ RUN apt-get update\
 # install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+COPY ./dockerbuild/docker-php-entrypoint.sh /var/www/docker-php-entrypoint.sh
+RUN chmod +x /var/www/docker-php-entrypoint.sh
+
 # mods rewrite の有効か
 RUN a2enmod rewrite
