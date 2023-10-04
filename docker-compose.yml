@@ -18,6 +18,9 @@ services :
 
   db:
     image: mysql:5.7
+    platform: linux/amd64
+    environment:
+      LANG: C.UTF-8
     volumes:
       - ./docker-dev/mysql/conf.d:/etc/mysql/conf.d
     env_file:
